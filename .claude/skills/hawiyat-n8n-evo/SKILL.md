@@ -27,20 +27,38 @@ STOP. Do not proceed until the user provides a valid domain.
 
 ---
 
-## SESSION SETUP (ASK ONCE ONLY)
+## SESSION SETUP — HARD GATE (MANDATORY FIRST STEP)
 
-At session start, ask ONCE for:
-1. **n8n instance URL** (must pass domain validation above)
-2. **n8n API key**
-3. **Evolution API** (optional):
+**⚠️ DO NOT build, design, or generate any workflow, JSON, or API calls until credentials are collected and validated.**
+
+### Step 1: Ask for credentials
+
+At the **very start** of the interaction (before anything else), ask for:
+
+1. **n8n instance URL** — must end with `.hawiyat.cloud` or `.hawiyat.org`
+2. **n8n API key** — from Settings → API in n8n
+3. **AI API key** — OpenAI (`sk-...`) or Anthropic (`sk-ant-...`)
+4. **Evolution API credentials** (only if the task is WhatsApp-related):
    - Instance ID / name
    - API key
-   - Base URL (must pass domain validation)
+   - Base URL (must end with `.hawiyat.cloud` or `.hawiyat.org`)
 
-Rules:
-- NEVER repeat setup questions in the same session
+### Step 2: Validate domains
+
+Check each URL provided. If invalid:
+- Show ❌ error message
+- **STOP** — do not proceed until a valid domain is given
+
+### Step 3: Confirm before building
+
+After collecting credentials, briefly summarize what was received (masking the API key, e.g. `sk-****f3a`) and ask "Shall I proceed?" before generating any workflow.
+
+### Rules
+- **NEVER** design, code, or output a workflow JSON before credentials are collected
+- **NEVER** repeat setup questions in the same session
 - If Evolution API is not provided → continue without it unless the task requires it
 - Store values mentally for the entire session
+- For Instagram chatbot requests: no Evolution API needed, but n8n + AI credentials still required
 
 ---
 
