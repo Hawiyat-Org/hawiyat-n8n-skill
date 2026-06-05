@@ -49,7 +49,13 @@ Once installed globally, the skill is available in **every** Claude Code session
 └── README.md
 ```
 
+## Development
 
+Edit the skill files in `.claude/skills/hawiyat-n8n-evo/`, then rebuild the distributable ZIP:
+
+```bash
+cd .claude/skills && zip -r ../../hawiyat-n8n-evo.skill hawiyat-n8n-evo/
+```
 
 ---
 
