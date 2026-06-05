@@ -1,5 +1,7 @@
 # Hawiyat n8n + Evolution API
 
+![Hawiyat n8n Skill](n8n%20skill.png)
+
 Claude Code skill for designing, building, and managing n8n workflows and Evolution API WhatsApp automation on Hawiyat infrastructure.
 
 ## Quick Start
