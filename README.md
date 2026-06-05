@@ -7,10 +7,12 @@ Claude Code skill for designing, building, and managing n8n workflows and Evolut
 ```bash
 git clone github.com/Hawiyat-Org/hawiyat-n8n-skill
 cd hawiyat-n8n-skill
-claude .
+claude add skill ./hawiyat-n8n-evo.skill   # install globally — do this once
 ```
 
-The skill loads automatically. Provide your n8n instance URL and API key when prompted, then start building.
+Once installed globally, the skill is available in **every** Claude Code session from any directory. Just open Claude Code anywhere and start building.
+
+> **Tip:** If you only want the skill inside this repo, skip the `claude add skill` step and just run `claude .` instead — the skill auto-loads from `CLAUDE.md`.
 
 ## What It Does
 
@@ -29,8 +31,8 @@ The skill loads automatically. Provide your n8n instance URL and API key when pr
 
 | Method | Command |
 |--------|---------|
+| **Global install** **(recommended)** | `claude add skill ./hawiyat-n8n-evo.skill` |
 | **Open repo** (auto-load) | `claude .` inside the repo |
-| **Global install** | `claude add skill ./hawiyat-n8n-evo.skill` |
 | **Manual extract** | `unzip hawiyat-n8n-evo.skill -d .claude/skills/hawiyat-n8n-evo/` |
 
 ## Repository Structure
